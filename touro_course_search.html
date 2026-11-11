@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search This Course</title>
+  <style>
+    :root {
+      --touro-navy: #003366;
+      --border: #c7cbd1;
+      --text: #202124;
+      --muted: #5f6368;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: transparent;
+    }
+    .search-panel {
+      width: 100%;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+    }
+    h1 {
+      margin: 0 0 12px;
+      color: var(--touro-navy);
+      font-size: 1.2rem;
+      line-height: 1.3;
+    }
+    form {
+      display: flex;
+      gap: 10px;
+      align-items: stretch;
+    }
+    input[type="search"] {
+      flex: 1 1 auto;
+      min-width: 0;
+      padding: 12px 13px;
+      border: 1px solid #8a9099;
+      border-radius: 6px;
+      font-size: 16px;
+      color: var(--text);
+      background: #fff;
+    }
+    input[type="search"]:focus {
+      outline: 3px solid rgba(0, 51, 102, .2);
+      border-color: var(--touro-navy);
+    }
+    button {
+      flex: 0 0 auto;
+      padding: 12px 20px;
+      border: 0;
+      border-radius: 6px;
+      background: var(--touro-navy);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: #00264d; }
+    button:focus-visible {
+      outline: 3px solid #d6a900;
+      outline-offset: 2px;
+    }
+    .hint {
+      margin: 9px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    @media (max-width: 420px) {
+      .search-panel { padding: 14px; }
+      form { flex-direction: column; }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="search-panel">
+    <h1>Search This Course</h1>
+    <form action="https://touro.instructure.com/courses/41032/search"
+          method="get"
+          target="_top">
+      <input
+        type="search"
+        name="q"
+        placeholder="Enter a keyword or topic..."
+        aria-label="Search course content"
+        required>
+      <button type="submit">Search</button>
+    </form>
+    <p class="hint">Search course materials, pages, and other available content.</p>
+  </main>
+</body>
+</html>
